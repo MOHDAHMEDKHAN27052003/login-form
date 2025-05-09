@@ -29,7 +29,7 @@ function SignIn(props) {
                             <button className='bg-gray-500 px-6 py-2 rounded-lg cursor-pointer hover:scale-[95%] transition-all text-white'>Sign In</button>
                         </div>
                     </div>
-                    <div className='text-center underline flex items-center justify-center'>
+                    <div className='text-center underline flex items-center justify-center gap-4'>
                         <small>Don't have an account?</small>
                         <button type="button" onClick={()=>setToggle(!toggle)} className='cursor-pointer hover:text-gray-500'>Sign Up</button>
                     </div>
