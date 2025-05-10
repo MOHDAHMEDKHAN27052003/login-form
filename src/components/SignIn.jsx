@@ -1,11 +1,19 @@
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 function SignIn(props) {
-    const { toggle, setToggle, addUser } = props;
+    const { toggle, setToggle, users } = props;
     const { register, handleSubmit, reset } = useForm();
     
     const onSubmit = (data) => {
-        addUser(data);
+        const user = users.find((user) => user.email === data.email && user.password === data.password);
+
+        if (user) {
+            toast.success(`Welcome back, ${user.name}`);
+        } else {
+            toast.error("Invalid credentials!");
+        }
+
         reset();
     };
 

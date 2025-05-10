@@ -19,7 +19,7 @@ function App() {
           {
             toggle ?
               (
-                <SignIn toggle={toggle} setToggle={setToggle} addUser={addUser} />
+                <SignIn toggle={toggle} setToggle={setToggle} users={users} />
               )
               :
               (
