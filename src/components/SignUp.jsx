@@ -24,7 +24,7 @@ function SignUp(props) {
     return (
         <>
             <div className="flex items-center justify-center min-h-screen text-white">
-                <form action="" onSubmit={handleSubmit(onSubmit)} className="bg-blue-500 m-4 p-8 rounded-2xl ">
+                <form action="" onSubmit={handleSubmit(onSubmit)} className="bg-blue-500 m-8 p-8 rounded-2xl ">
                     <h1 className='text-5xl font-semibold'>Sign Up</h1>
                     <div className='py-12'>
                         <div className='pb-6'>
@@ -46,7 +46,7 @@ function SignUp(props) {
                             <button className='bg-gray-500 px-6 py-2 rounded cursor-pointer hover:scale-[95%] transition-all text-white'>Sign Up</button>
                         </div>
                     </div>
-                    <div className='text-center underline flex items-center justify-center gap-4'>
+                    <div className='text-center underline flex flex-wrap items-center justify-center gap-4'>
                         <small>Already have an account?</small>
                         <button type="button" onClick={()=>setToggle(!toggle)} className='cursor-pointer hover:text-gray-500'>Sign In</button>
                     </div>
