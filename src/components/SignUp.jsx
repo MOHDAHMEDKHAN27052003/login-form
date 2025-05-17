@@ -1,9 +1,11 @@
 import { nanoid } from "nanoid";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { userContext } from "../contexts/UserContext";
 
-function SignUp(props) {
-    const { toggle, setToggle, addUser, users } = props;
+function SignUp() {
+    const { toggle, setToggle, addUser, users } = useContext(userContext);
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {

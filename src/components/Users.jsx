@@ -1,5 +1,8 @@
-function Users(props) {
-    const { users, setUsers } = props;
+import { useContext } from "react";
+import { userContext } from "../contexts/UserContext";
+
+function Users() {
+    const { users, setUsers } = useContext(userContext);
 
     const handleDelete = (id) => {
         const copyUsers = [...users];

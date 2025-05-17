@@ -1,38 +1,32 @@
-import { useState } from 'react';
-
+import { useContext } from 'react';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Users from './components/Users';
+import { userContext } from './contexts/UserContext';
 
 function App() {
-  const [toggle, setToggle] = useState(true);
-  const [users, setUsers] = useState([]);
-
-  const addUser = (data) => {
-    setUsers([...users, data]); // Keep adding new users
-  };
+  const { toggle } = useContext(userContext);
 
   return (
     <>
       <div>
         <div>
-          {
-            toggle ?
-              (
-                <SignIn toggle={toggle} setToggle={setToggle} users={users} />
-              )
-              :
-              (
-                <SignUp toggle={toggle} setToggle={setToggle} addUser={addUser} users={users} />
-              )
+          {toggle ?
+            (
+              <SignIn />
+            )
+            :
+            (
+              <SignUp />
+            )
           }
         </div>
         <div>
-          <Users users={users} setUsers={setUsers} />
+          <Users />
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default App;

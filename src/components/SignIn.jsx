@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { userContext } from "../contexts/UserContext";
 
-function SignIn(props) {
-    const { toggle, setToggle, users } = props;
+function SignIn() {
+    const { toggle, setToggle, users } = useContext(userContext);
     const { register, handleSubmit, reset } = useForm();
     
     const onSubmit = (data) => {
